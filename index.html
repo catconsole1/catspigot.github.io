@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>cats spigot</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: white;
+        margin: 30px 0;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .cats {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        width: 90%;
+        max-width: 1400px;
+        margin-bottom: 50px;
+    }
+
+    .cats img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .cats img:hover {
+        transform: scale(1.08);
+    }
+
+    footer {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+        margin-top: auto;
+        font-size: 14px;
+    }
+
+    footer strong {
+        display: block;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h1>100 cats </h1>
+<div class="cats" id="catsContainer"></div>
+
+<footer>
+    Сайт был сгенерирован ИИ<br>
+    <strong>Котики Легенда</strong>
+    Котиков Владислав Александрович<br>
+    NIP: 9573949952
+</footer>
+
+<script>
+    const container = document.getElementById("catsContainer");
+
+    // Первый файл cat.png
+    const firstCat = document.createElement("img");
+    firstCat.src = "cat.png";
+    firstCat.alt = "Cat";
+    container.appendChild(firstCat);
+
+    // Остальные от cat1.png до cat100.png
+    for (let i = 1; i <= 100; i++) {
+        const img = document.createElement("img");
+        img.src = `cat${i}.png`;
+        img.alt = `Cat ${i}`;
+        container.appendChild(img);
+    }
+</script>
+
+</body>
+</html>
